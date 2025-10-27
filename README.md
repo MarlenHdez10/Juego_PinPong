@@ -11,7 +11,7 @@ interactivos(como son rebote de pelota  con la barra, sondo al perder y sonido a
 
 ![Pantalla del juego](captura1.png)
 
-![Pantalla del juego2](captura2.png)
+![Pantalla del juego2](Captura2.png)
 
 
 
