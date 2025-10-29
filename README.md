@@ -1,4 +1,4 @@
-# Juego_PinPong
+# juego_pin_pong
 Juego usando Canvas 
 Un juego de Pin Pong implementado en canvas con lógica en JavaScript.
 El juego consiste en simular el juego clasico de pin pong donde un jugador controla en este caso una barra (lado izquierdo) 
