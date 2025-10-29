@@ -6,8 +6,8 @@ del canvas para “golpear” una pelota que rebota continuamente en la pantalla
 borde izquierdo y acumular puntos al hacer que toque el borde derecho y alcanzar el puntaje máximo sin perder todas las vidas.
 
 El juego incluye barras(simulan las paletas que golpean) estas se podrán mover con las flechas del teclado (flecha arriba y 
-flecha abajo), una pelota(semulada en forma de moneda de estrella que rota), puntaje y niveles de juego, vidas y sonidos 
-interactivos(como son rebote de pelota  con la barra, sondo al perder y sonido al ganar).
+flecha abajo), una pelota(semulada en forma de moneda de estrella que rota), puntaje y niveles de juego dende aumentrará la velocidad
+y cambiaran de colores las barras, vidas y sonidos interactivos(como son rebote de pelota  con la barra, sondo al perder y sonido al ganar).
 
 ![Pantalla del juego](captura1.png)
 
