@@ -371,6 +371,7 @@ function sonidoPerder() {
   o.stop(ctxAudio.currentTime + 0.5);
 }
 
+
 function sonidoGanar() {
   const ctxAudio = new (window.AudioContext || window.webkitAudioContext)();
   const o = ctxAudio.createOscillator();
