@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUEGO</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pin Pong</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <div class="contenedor">
-        <h1>Pin Pong</h1>
-        <canvas class="area" id="area" width="600px" height="600px"></canvas>
-    </div>
 
-    <script src="js/script.js"></script>
+  <div class="fondo"></div>
+
+  <div class="contenedor">
+    <h1>Pin Pong</h1>
+    <div class="juego">
+      <canvas class="area" id="area" width="600" height="600"></canvas>
+
+      <!-- Panel lateral -->
+      <div class="panel">
+        <h2>Estadísticas</h2>
+        <p><strong>Score:</strong> <span id="score">0</span></p>
+        <p><strong>Puntaje Máx:</strong> <span id="max">0</span></p>
+        <p><strong>Vidas:</strong> <span id="vidas">3</span></p>
+        <p><strong>Nivel:</strong> <span id="nivel">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
