@@ -12,6 +12,3 @@ y cambiaran de colores las barras, vidas y sonidos interactivos(como son rebote 
 ![Pantalla del juego](captura1.png)
 
 ![Pantalla del juego2](Captura2.png)
-
-
-
