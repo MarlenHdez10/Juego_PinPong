@@ -1,18 +1,20 @@
 const canvas = document.getElementById('area');
 const ctx = canvas.getContext('2d');
 
-//variables
+//variables imaagen
 var img = new Image();
 img.src = "img/estrellas.png";
 
-var dx = 5;
-var dy = -5;
-
 //barra
+ancho_barra = 20;
+alto_barra = 100;
 var posX_barra = 3;
 var posY_barra = canvas.height / 2;
 var pasos = 50;
 
+//barra2
+ancho_barra2 = 20;
+alto_barra2 = 100;
 var posX_barra2 = canvas.width-20;
 var posY_barra2 =  canvas.height / 2;;
 var pasos = 15;
@@ -20,13 +22,10 @@ var pausa = false; //barra 2
 
 var MARGEN = 150;
 
-ancho_barra = 20;
-alto_barra = 100;
-ancho_barra2 = 20;
-alto_barra2 = 100;
-
 var x = 50;
 var y = canvas.height / 2;
+var dx = 5;
+var dy = -5;
 
 var indice = 0;
 var pelota_radio = 20;
@@ -35,11 +34,17 @@ var contador = 0;
 var puntaje = 0;
 var vidas = 3;
 var nivel = 0;
-const PUNTAJE_MAX = 20; 
+const PUNTAJE_MAX = 25; 
 
 let intervalo;
 
-var colores = ["#EE97E5","#267ed8","#5119e7"];
+// Puntajes por nivel
+const PUNTAJES = [4, 8, 12, 15,18];
+
+let velocidad = 40;
+let barra2_velocidad = 12;
+
+var colores = ["#EE97E5","#267ed8","#e77d19ff","#53e719ff","#8141a7ff"];
 
 //matriz de posiciones Moneda
 let M = [
@@ -70,7 +75,8 @@ function dibujarMoneda(){
 }
 
 function dibujarBarra(){
-    ctx.fillStyle = "#fffbfbff";
+    ctx.fillStyle = colores[nivel % colores.length]; // cambia el color con cada nivel
+    //ctx.fillStyle = "#fffbfbff";
     ctx.fillRect(posX_barra,
         posY_barra,
         ancho_barra,
@@ -78,7 +84,8 @@ function dibujarBarra(){
 }
 
     function dibujarBarra2(){
-        ctx.fillStyle = "#fffbfbff";
+        //ctx.fillStyle = "#fffbfbff";
+         ctx.fillStyle = colores[nivel % colores.length];
         ctx.fillRect(posX_barra2,
             posY_barra2,
             ancho_barra2,
@@ -269,11 +276,7 @@ function detectar_colision_barra() {
     }
 }
 
-// Puntajes por nivel
-const PUNTAJES = [3, 6, 9, 12,15];
-
 // Función para aumentar velocidad
-let velocidad = 40;
 
 function aumentarVelocidad() {
     if(nivel==1){
