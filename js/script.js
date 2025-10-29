@@ -56,6 +56,11 @@ let M = [
     [73,50,40,38,40,38]
 ]
 
+//elemtos para poner en el paner del score
+const scoreText = document.getElementById('score');
+const maxText = document.getElementById('max');
+const vidasText = document.getElementById('vidas');
+const nivelText = document.getElementById('nivel');
 
 //funciones para dibujar
 function dibujarMoneda(){
@@ -111,10 +116,10 @@ function dibujarJuego(){
     dibujarCancha();
 
     // Mostrar puntaje máximo
-    let maxPuntaje = localStorage.getItem("maxPuntaje") || 0;
-    ctx.font = "18px Arial";
-    ctx.fillStyle = "white";
-    ctx.fillText("Máximo: " + maxPuntaje, 350, 20);
+    // let maxPuntaje = localStorage.getItem("maxPuntaje") || 0;
+    // ctx.font = "18px Arial";
+    // ctx.fillStyle = "white";
+    // ctx.fillText("Puntaje máximo: " + maxPuntaje, 350, 20);
 
     if(vidas === 0) {
         inicializar(); // Mostrar pantalla final
@@ -127,11 +132,11 @@ function dibujarJuego(){
 
     dibujarMoneda();
 
-    ctx.font="18px Arial";
-    ctx.fillStyle="white";
-    ctx.fillText("Score:"+puntaje,500,20);
-    ctx.fillText("Vidas:"+vidas,70,20)
-    ctx.fillText("Nivel:"+nivel,220,20)
+    // ctx.font="18px Arial";
+    // ctx.fillStyle="white";
+    // ctx.fillText("Score:"+puntaje,500,20);
+    // ctx.fillText("Vidas:"+vidas,70,20)
+    // ctx.fillText("Nivel:"+nivel,220,20)
     x += dx;
     y += dy;
     detectar_colision_barra();
@@ -177,6 +182,7 @@ function dibujarJuego(){
     verificarVidas();
     contador++;
     terminar();
+    actualizarPanel();
     
 }
 
@@ -314,7 +320,7 @@ function verificarNivel(){
 }
 
 function verificarVidas(){
-    if(vidas < 0){
+    if(vidas <= 0){
         sonidoPerder();
         clearInterval(intervalo);
         ctx.font = "18px Arial";
@@ -323,6 +329,12 @@ function verificarVidas(){
     }
 }
 
+function actualizarPanel() {
+  scoreText.textContent = puntaje;
+  vidasText.textContent = vidas;
+  nivelText.textContent = nivel;
+  maxText.textContent = localStorage.getItem("maxPuntaje") || 0;
+}
 
 function terminar(){
     if(puntaje >= PUNTAJE_MAX) {
@@ -370,7 +382,6 @@ function sonidoPerder() {
   o.start();
   o.stop(ctxAudio.currentTime + 0.5);
 }
-
 
 function sonidoGanar() {
   const ctxAudio = new (window.AudioContext || window.webkitAudioContext)();
